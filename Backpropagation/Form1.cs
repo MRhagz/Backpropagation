@@ -9,6 +9,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Backprop;
+using Training;
+using Training.SimulatedAnnealing;
 
 namespace Backpropagation
 {
@@ -37,7 +39,7 @@ namespace Backpropagation
             }
 
             neural_network = new NeuralNet(numberOfInput, numberOfHiddenNeurons, numberOfOutput);
-            neural_network.setDesiredOutput(0, 1);
+            
         }
 
        
@@ -57,10 +59,19 @@ namespace Backpropagation
             }
 
             // Apply inputs once before training starts
-            neural_network.setInputs(0, Convert.ToDouble(input1.Checked));
-            neural_network.setInputs(1, Convert.ToDouble(input2.Checked));
-            neural_network.setInputs(2, Convert.ToDouble(input3.Checked));
-            neural_network.setInputs(3, Convert.ToDouble(input4.Checked));
+            bool _input1 = input1.Checked;
+            bool _input2 = input2.Checked;
+            bool _input3 = input3.Checked;
+            bool _input4 = input4.Checked;
+
+            neural_network.setInputs(0, Convert.ToDouble(_input1));
+            neural_network.setInputs(1, Convert.ToDouble(_input2));
+            neural_network.setInputs(2, Convert.ToDouble(_input3));
+            neural_network.setInputs(3, Convert.ToDouble(_input4));
+
+            int desiredOutput = (_input1 && _input2 && _input3 && _input4) ? 1 : 0;
+
+            neural_network.setDesiredOutput(0, desiredOutput);
 
             // Prevent re-entrancy: if training already running, ignore the request
             if (trainingCts != null)
