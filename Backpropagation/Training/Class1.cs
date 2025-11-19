@@ -74,7 +74,6 @@ namespace Training.SimulatedAnnealing
                     nn.setInputs(2, input[2]);
                     nn.setInputs(3, input[3]);
                     nn.setDesiredOutput(0, targets[i]);
-                    nn.run();
                     nn.learn();
                 }
         }
@@ -88,7 +87,7 @@ namespace Training.SimulatedAnnealing
             HyperParameters current = new HyperParameters
             {
                 Epochs = rnd.Next(100, 2000),
-                HiddenNeurons = rnd.Next(1, 10)
+                HiddenNeurons = rnd.Next(1, 5)
             };
 
             double currentCost = TrainAndEvaluate(current);

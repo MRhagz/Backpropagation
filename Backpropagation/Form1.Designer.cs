@@ -54,6 +54,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.epoch = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfHN)).BeginInit();
             this.panel1.SuspendLayout();
@@ -149,7 +150,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(791, 658);
+            this.button2.Location = new System.Drawing.Point(809, 658);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(185, 67);
             this.button2.TabIndex = 13;
@@ -207,7 +208,7 @@
             // 
             this.panel3.Controls.Add(this.numberOfE);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(791, 516);
+            this.panel3.Location = new System.Drawing.Point(809, 764);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 100);
             this.panel3.TabIndex = 16;
@@ -292,11 +293,22 @@
             this.epoch.TabIndex = 6;
             this.epoch.Text = "....";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(485, 783);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(185, 67);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "Batch Training (Random Inputs)";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 810);
+            this.ClientSize = new System.Drawing.Size(1146, 908);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -355,6 +367,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label epoch;
+        private System.Windows.Forms.Button button4;
     }
 }
 
