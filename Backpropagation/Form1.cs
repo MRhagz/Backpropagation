@@ -151,7 +151,6 @@ namespace Backpropagation
                                 neural_network.setInputs(1, inputs[j][1]);
                                 neural_network.setInputs(2, inputs[j][2]);
                                 neural_network.setInputs(3, inputs[j][3]);
-                                Console.WriteLine(targets[j]);
                                 neural_network.setDesiredOutput(0, targets[j]);
                                 neural_network.learn();
                             }
